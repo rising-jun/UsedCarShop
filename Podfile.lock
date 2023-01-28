@@ -1,29 +1,49 @@
 PODS:
+  - NMapsMap (3.16.0)
   - ReactorKit (3.2.0):
     - RxSwift (~> 6.0)
     - WeakMapTable (~> 1.1)
+  - RxAppState (1.7.1):
+    - RxCocoa (~> 6.2)
+    - RxSwift (~> 6.2)
+  - RxCocoa (6.5.0):
+    - RxRelay (= 6.5.0)
+    - RxSwift (= 6.5.0)
+  - RxRelay (6.5.0):
+    - RxSwift (= 6.5.0)
   - RxSwift (6.5.0)
   - SnapKit (5.6.0)
   - WeakMapTable (1.2.0)
 
 DEPENDENCIES:
+  - NMapsMap
   - ReactorKit
+  - RxAppState
+  - RxCocoa
   - RxSwift
   - SnapKit
 
 SPEC REPOS:
   trunk:
+    - NMapsMap
     - ReactorKit
+    - RxAppState
+    - RxCocoa
+    - RxRelay
     - RxSwift
     - SnapKit
     - WeakMapTable
 
 SPEC CHECKSUMS:
+  NMapsMap: a2593320fca2bb09e521c05b4dffee4da42e96ed
   ReactorKit: e8b11d6b9c415405f381669b095c154a05b59eca
+  RxAppState: 9c34f951d4ff8b9034f84016fe766202365bceb2
+  RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
+  RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   WeakMapTable: 05c694ce8439a7a9ebabb56187287a63c57673d6
 
-PODFILE CHECKSUM: 248aa2b8fd2927375eb08c60c1e6811a4b3f3f11
+PODFILE CHECKSUM: ff4e447bc4f4a1897ee8ba7e0fb7e8166c2e00bf
 
 COCOAPODS: 1.11.3

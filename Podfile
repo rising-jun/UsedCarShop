@@ -10,7 +10,9 @@ target 'UsedCarShop' do
   pod 'SnapKit'
   pod 'ReactorKit'
   pod 'RxSwift'
-
+  pod 'RxCocoa'  
+  pod 'NMapsMap'
+  pod 'RxAppState'
   target 'UsedCarShopTests' do
     inherit! :search_paths
     # Pods for testing

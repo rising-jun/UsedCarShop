@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import NMapsMap
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -17,6 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: scene)
         window.makeKeyAndVisible()
         window.rootViewController = SplashViewController()
+        NMFAuthManager.shared().clientId = NaverMap.clientID
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             window.rootViewController = UINavigationController(rootViewController: ArroundShopMapViewController())
         }
@@ -30,3 +32,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneDidEnterBackground(_ scene: UIScene) { }
 }
 
+enum NaverMap {
+    static let clientID: String = "d4h1sjy86s"
+}

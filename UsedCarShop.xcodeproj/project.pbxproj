@@ -126,13 +126,12 @@
 		72B4FE412984D912000902AF /* UsedCarShop */ = {
 			isa = PBXGroup;
 			children = (
+				72E7303C298502EE00B70639 /* scene */,
 				72B4FE422984D912000902AF /* AppDelegate.swift */,
 				72B4FE442984D912000902AF /* SceneDelegate.swift */,
-				72B4FE462984D912000902AF /* SplashViewController.swift */,
 				72B4FE4B2984D915000902AF /* Assets.xcassets */,
 				72B4FE4D2984D915000902AF /* LaunchScreen.storyboard */,
 				72B4FE502984D915000902AF /* Info.plist */,
-				72E7303A2984F96A00B70639 /* ArroundShopMapViewController.swift */,
 			);
 			path = UsedCarShop;
 			sourceTree = "<group>";
@@ -152,6 +151,15 @@
 				72B4FE652984D915000902AF /* UsedCarShopUITestsLaunchTests.swift */,
 			);
 			path = UsedCarShopUITests;
+			sourceTree = "<group>";
+		};
+		72E7303C298502EE00B70639 /* scene */ = {
+			isa = PBXGroup;
+			children = (
+				72B4FE462984D912000902AF /* SplashViewController.swift */,
+				72E7303A2984F96A00B70639 /* ArroundShopMapViewController.swift */,
+			);
+			path = scene;
 			sourceTree = "<group>";
 		};
 		80E45C734F0BDE246B3B1873 /* Pods */ = {
