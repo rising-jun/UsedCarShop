@@ -20,9 +20,20 @@ class ArroundShopMapViewController: UIViewController {
         return mapView
     }()
     
+    private let permisssionManager = PermissionManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         viewAttribute()
+        permisssionManager.updateLocation = { lat, lng in
+            print("update lat \(lat), lng \(lng)")
+        }
+        
+        permisssionManager.whenPermissionDeniend = {
+            print("permission denined")
+        }
+        
+        permisssionManager.requestUseLocationPermission()
     }
 }
 private extension ArroundShopMapViewController {
