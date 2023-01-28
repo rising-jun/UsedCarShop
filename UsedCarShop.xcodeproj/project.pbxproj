@@ -16,7 +16,7 @@
 		72B4FE5A2984D915000902AF /* UsedCarShopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B4FE592984D915000902AF /* UsedCarShopTests.swift */; };
 		72B4FE642984D915000902AF /* UsedCarShopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B4FE632984D915000902AF /* UsedCarShopUITests.swift */; };
 		72B4FE662984D915000902AF /* UsedCarShopUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B4FE652984D915000902AF /* UsedCarShopUITestsLaunchTests.swift */; };
-		72E7303B2984F96A00B70639 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E7303A2984F96A00B70639 /* MapViewController.swift */; };
+		72E7303B2984F96A00B70639 /* ArroundShopMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E7303A2984F96A00B70639 /* ArroundShopMapViewController.swift */; };
 		CE1A6FD3F1BF799B28D7DFE5 /* Pods_UsedCarShop_UsedCarShopUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79CFCF5879AD2B384C8B0895 /* Pods_UsedCarShop_UsedCarShopUITests.framework */; };
 		D7469A250964EFE25B2EFFB1 /* Pods_UsedCarShop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 037A6D7DD45D0ECE86140A17 /* Pods_UsedCarShop.framework */; };
 /* End PBXBuildFile section */
@@ -56,7 +56,7 @@
 		72B4FE5F2984D915000902AF /* UsedCarShopUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UsedCarShopUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		72B4FE632984D915000902AF /* UsedCarShopUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsedCarShopUITests.swift; sourceTree = "<group>"; };
 		72B4FE652984D915000902AF /* UsedCarShopUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsedCarShopUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		72E7303A2984F96A00B70639 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		72E7303A2984F96A00B70639 /* ArroundShopMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArroundShopMapViewController.swift; sourceTree = "<group>"; };
 		79CFCF5879AD2B384C8B0895 /* Pods_UsedCarShop_UsedCarShopUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UsedCarShop_UsedCarShopUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEF213C8EFF77C44A9D06E38 /* Pods_UsedCarShopTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UsedCarShopTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D46004F64FCCF7D9044C2869 /* Pods-UsedCarShop-UsedCarShopUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UsedCarShop-UsedCarShopUITests.release.xcconfig"; path = "Target Support Files/Pods-UsedCarShop-UsedCarShopUITests/Pods-UsedCarShop-UsedCarShopUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -132,7 +132,7 @@
 				72B4FE4B2984D915000902AF /* Assets.xcassets */,
 				72B4FE4D2984D915000902AF /* LaunchScreen.storyboard */,
 				72B4FE502984D915000902AF /* Info.plist */,
-				72E7303A2984F96A00B70639 /* MapViewController.swift */,
+				72E7303A2984F96A00B70639 /* ArroundShopMapViewController.swift */,
 			);
 			path = UsedCarShop;
 			sourceTree = "<group>";
@@ -408,7 +408,7 @@
 				72B4FE472984D912000902AF /* SplashViewController.swift in Sources */,
 				72B4FE432984D912000902AF /* AppDelegate.swift in Sources */,
 				72B4FE452984D912000902AF /* SceneDelegate.swift in Sources */,
-				72E7303B2984F96A00B70639 /* MapViewController.swift in Sources */,
+				72E7303B2984F96A00B70639 /* ArroundShopMapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
