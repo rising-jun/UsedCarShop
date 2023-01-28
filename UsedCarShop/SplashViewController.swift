@@ -5,12 +5,42 @@
 //  Created by 김동준 on 2023/01/28.
 //
 
-import UIKit
+import SnapKit
 
-class SplashViewController: UIViewController {
+final class SplashViewController: UIViewController {
+    
+    private let imageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
+        imageView.image = UIImage(named: "recycler_car")
+        return imageView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        viewAttribute()
     }
 }
 
+private extension SplashViewController {
+    func viewAttribute() {
+        view.backgroundColor = .white
+        view.addSubview(imageView)
+        layout()
+    }
+    
+    func layout() {
+        imageView.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+            make.width.equalTo(150)
+        }
+    }
+}
+
+extension UIView {
+    func addSubviews(_ views: UIView...) {
+        for view in views {
+            addSubview(view)
+        }
+    }
+}
