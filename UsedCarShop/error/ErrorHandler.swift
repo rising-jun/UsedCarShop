@@ -48,7 +48,7 @@ extension NetworkError {
     var logMessage: String {
         switch self {
         case .nilSelf:
-            return "사용되는 객체가 인스턴스에서 해제되었습니다."
+            return "사용되는 인스턴스가 메모리에서 해제되었습니다."
         case .notFound:
             return "내부에서 해당 파일을 찾을 수 없습니다."
         case .invailURL:
