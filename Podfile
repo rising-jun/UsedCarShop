@@ -9,6 +9,7 @@ target 'UsedCarShop' do
 
   pod 'SnapKit'
   pod 'ReactorKit'
+  pod 'RxAppState'
   pod 'RxSwift'
   pod 'RxCocoa'  
   pod 'NMapsMap'
