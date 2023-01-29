@@ -53,12 +53,3 @@ final class Service {
         return data
     }
 }
-
-
-enum NetworkError: Error {
-    case nilSelf
-    case notFound
-    case invailURL
-    case response
-    case jsonParsing
-}
