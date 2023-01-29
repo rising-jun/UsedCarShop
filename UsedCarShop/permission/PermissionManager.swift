@@ -28,7 +28,8 @@ extension PermissionManager: CLLocationManagerDelegate {
         case .shouldRequest:
             requestLocationPermission()
         case .available:
-            break
+            locationManager.startUpdatingLocation()
+
         case .unavailable:
             whenPermissionDeniend?()
         }

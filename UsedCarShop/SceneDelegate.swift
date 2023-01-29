@@ -20,7 +20,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window.rootViewController = SplashViewController()
         NMFAuthManager.shared().clientId = NaverMap.clientID
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            window.rootViewController = UINavigationController(rootViewController: ArroundShopMapViewController())
+            let arroundShopMapViewController = ArroundShopMapViewController()
+            let reactor = ArroundShopMapReactor()
+            arroundShopMapViewController.reactor = reactor
+            window.rootViewController = UINavigationController(rootViewController: arroundShopMapViewController)
         }
         self.window = window
     }
