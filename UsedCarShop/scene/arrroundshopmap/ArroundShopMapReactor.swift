@@ -14,6 +14,7 @@ final class ArroundShopMapReactor: Reactor {
     
     enum Action {
         case viewDidLoad
+        case tapUserLocation
     }
     
     enum Mutation {
@@ -30,9 +31,10 @@ final class ArroundShopMapReactor: Reactor {
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
         case .viewDidLoad:
-             
             return Observable.concat([requestUserLocation().map { Mutation.updateCameraPoint($0, $1)},
                                       .just(.updateCarShopPoint)])
+        case .tapUserLocation:
+            return .just(.updateCameraPoint(currentState.userPoint, currentState.locationPermission))
         }
     }
     

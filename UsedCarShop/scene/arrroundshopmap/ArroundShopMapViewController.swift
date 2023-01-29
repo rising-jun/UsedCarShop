@@ -18,6 +18,13 @@ final class ArroundShopMapViewController: UIViewController, View {
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
         
+        userLocationTapGesture.rx
+            .event
+            .throttle(.milliseconds(500), scheduler: MainScheduler.instance)
+            .map { _ in Reactor.Action.tapUserLocation }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        
         reactor.state.map { $0.locationPermission }
             .distinctUntilChanged()
             .bind { permission in
@@ -25,14 +32,12 @@ final class ArroundShopMapViewController: UIViewController, View {
             }.disposed(by: disposeBag)
         
         reactor.state.map { $0.userPoint }
-            .distinctUntilChanged()
             .observe(on: MainScheduler.instance)
             .bind { [weak self] userLocation in
                 guard let self = self else { return }
                 guard let userLocation = userLocation else { return }
                 self.setCameraWithUser(to: userLocation)
             }.disposed(by: disposeBag)
-        
     }
     
     private let mapView: NMFNaverMapView = {
@@ -61,7 +66,7 @@ final class ArroundShopMapViewController: UIViewController, View {
         }
         return view
     }()
-    
+    private let userLocationTapGesture = UITapGestureRecognizer()
     private let permisssionManager = PermissionManager()
     
     override func viewDidLoad() {
@@ -87,6 +92,7 @@ private extension ArroundShopMapViewController {
     func viewAttribute() {
         view.backgroundColor = .white
         view.addSubviews(mapView, userLocationView)
+        userLocationView.addGestureRecognizer(userLocationTapGesture)
         layout()
     }
     
