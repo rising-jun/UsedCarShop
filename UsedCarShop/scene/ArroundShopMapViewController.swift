@@ -34,6 +34,11 @@ class ArroundShopMapViewController: UIViewController {
         }
         
         permisssionManager.requestUseLocationPermission()
+        Task {
+            let repository = CarShopRespository()
+            let model = await repository.requestMockCarShop()
+            print(model?.count)
+        }
     }
 }
 private extension ArroundShopMapViewController {
