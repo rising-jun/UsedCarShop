@@ -19,20 +19,23 @@ final class ArroundShopMapReactor: Reactor {
     
     enum Mutation {
         case updateCameraPoint(Location?, LocationPermission)
-        case updateCarShopPoint
+        case updateCarShopPoints([CarShopDTO]?)
         case none
     }
     
     struct State {
         var userPoint: Location? = Location(lat: 0.0, lng: 0.0)
         var locationPermission: LocationPermission = .available
+        var carshops: [CarShopDTO] = []
     }
     
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
         case .viewDidLoad:
-            return Observable.concat([requestUserLocation().map { Mutation.updateCameraPoint($0, $1)},
-                                      .just(.updateCarShopPoint)])
+            return Observable.merge(
+                                      requestUserLocation().map { Mutation.updateCameraPoint($0, $1)},
+                                      requestCarShopPoints().map { Mutation.updateCarShopPoints($0)}
+                                     )
         case .tapUserLocation:
             return .just(.updateCameraPoint(currentState.userPoint, currentState.locationPermission))
         }
@@ -42,10 +45,12 @@ final class ArroundShopMapReactor: Reactor {
         var newState = state
         switch mutation {
         case .updateCameraPoint(let location, let permission):
+            print("updateCameraPoint")
             newState.locationPermission = permission
             newState.userPoint = location
-        case .updateCarShopPoint:
-            print("")
+        case .updateCarShopPoints(let carshops):
+            print("updated carshop!!")
+            newState.carshops = carshops ?? []
         case .none:
             print("")
         }
@@ -53,12 +58,23 @@ final class ArroundShopMapReactor: Reactor {
     }
 }
 private extension ArroundShopMapReactor {
-    func requestUserLocation() -> PublishSubject<(Location?, LocationPermission)> {
-        let userLocationSubject = PublishSubject<(Location?, LocationPermission)>()
-        Task {
-            let result = await usecase.requestUserLocation()
-            userLocationSubject.onNext((result.0, result.1))
+    func requestUserLocation() -> Observable<(Location?, LocationPermission)> {
+        return Observable<(Location?, LocationPermission)>.create { [weak self] observer in
+            guard let self = self else { return Disposables.create() }
+            let task = Task {
+                observer.onNext(await self.usecase.requestUserLocation())
+            }
+            return Disposables.create { task.cancel() }
         }
-        return userLocationSubject
+    }
+    
+    func requestCarShopPoints() -> Observable<[CarShopDTO]?> {
+        return Observable<[CarShopDTO]?>.create { [weak self] observer in
+            guard let self = self else { return Disposables.create() }
+            let task = Task {
+                observer.onNext(await self.usecase.requestCarShopModel())
+            }
+            return Disposables.create { task.cancel() }
+        }
     }
 }

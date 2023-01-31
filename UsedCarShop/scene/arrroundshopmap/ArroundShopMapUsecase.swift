@@ -9,11 +9,12 @@ import Foundation
 
 final class ArroundShopMapUsecase {
     private let permissionManager = PermissionManager()
+    private let repository = CarShopRespository()
     
     func requestUserLocation() async -> (Location?, LocationPermission) {
         return await withCheckedContinuation { continuation in
             permissionManager.updateLocation = { lat, lng in
-                print("updated closure \(lat) \(lng)")
+                print("arround usecase closure \(lat) \(lng)")
                 continuation.resume(returning: (Location(lat: lat, lng: lng), .available))
             }
             
@@ -24,5 +25,9 @@ final class ArroundShopMapUsecase {
             permissionManager.requestUseLocationPermission()
         }
     }
-
+    
+    func requestCarShopModel() async -> [CarShopDTO]? {
+        print("request carshop")
+        return await repository.requestMockCarShop()
+    }
 }
