@@ -15,12 +15,13 @@ final class CarShopRespository {
         switch result {
         case .success(let data):
             guard let carShops = jsonDecode(decodeType: [CarShopDTO].self, data: data) else {
-                print("jsonparsing error ")
-                return nil
-            }
+                //TODO go to error jsonparsing
+                print("json error")
+                return nil }
             return carShops
         case .failure(let error):
             print("error \(error)")
+            //TODO go to error
         }
         return nil
     }
