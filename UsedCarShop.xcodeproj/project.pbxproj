@@ -27,6 +27,7 @@
 		72B4FE642984D915000902AF /* UsedCarShopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B4FE632984D915000902AF /* UsedCarShopUITests.swift */; };
 		72B4FE662984D915000902AF /* UsedCarShopUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B4FE652984D915000902AF /* UsedCarShopUITestsLaunchTests.swift */; };
 		72BB243B298E205600028DBB /* CarShopDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BB243A298E205600028DBB /* CarShopDetailCell.swift */; };
+		72BB243D298E374800028DBB /* DetailCarShopUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BB243C298E374800028DBB /* DetailCarShopUsecase.swift */; };
 		72E7303B2984F96A00B70639 /* ArroundShopMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E7303A2984F96A00B70639 /* ArroundShopMapViewController.swift */; };
 		72E7303F2985045E00B70639 /* PermissionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E7303E2985045E00B70639 /* PermissionManager.swift */; };
 		72E73041298515EC00B70639 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E73040298515EC00B70639 /* Service.swift */; };
@@ -81,6 +82,7 @@
 		72B4FE632984D915000902AF /* UsedCarShopUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsedCarShopUITests.swift; sourceTree = "<group>"; };
 		72B4FE652984D915000902AF /* UsedCarShopUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsedCarShopUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		72BB243A298E205600028DBB /* CarShopDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarShopDetailCell.swift; sourceTree = "<group>"; };
+		72BB243C298E374800028DBB /* DetailCarShopUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCarShopUsecase.swift; sourceTree = "<group>"; };
 		72E7303A2984F96A00B70639 /* ArroundShopMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArroundShopMapViewController.swift; sourceTree = "<group>"; };
 		72E7303E2985045E00B70639 /* PermissionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionManager.swift; sourceTree = "<group>"; };
 		72E73040298515EC00B70639 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				7251E8B2298AADEA00F21ABE /* collectionfactor */,
 				7251E8B0298AA89600F21ABE /* DetailCarShopViewController.swift */,
 				7251E8B5298AB13F00F21ABE /* DetailCarShopReactor.swift */,
+				72BB243C298E374800028DBB /* DetailCarShopUsecase.swift */,
 			);
 			path = detailcarshop;
 			sourceTree = "<group>";
@@ -535,6 +538,7 @@
 				722CAAA929865D25005F6F49 /* ArroundShopMapUsecase.swift in Sources */,
 				72BB243B298E205600028DBB /* CarShopDetailCell.swift in Sources */,
 				7251E8B6298AB13F00F21ABE /* DetailCarShopReactor.swift in Sources */,
+				72BB243D298E374800028DBB /* DetailCarShopUsecase.swift in Sources */,
 				7251E8B4298AB02100F21ABE /* DetailCarTableViewDataSource.swift in Sources */,
 				72E7303B2984F96A00B70639 /* ArroundShopMapViewController.swift in Sources */,
 			);
