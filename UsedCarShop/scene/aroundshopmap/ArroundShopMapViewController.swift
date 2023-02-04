@@ -26,6 +26,11 @@ final class ArroundShopMapViewController: UIViewController, View {
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
         
+        markerTapEventRelay
+            .map { Reactor.Action.carshopMarkerTapped($0) }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        
         reactor.state.map { $0.locationPermission }
             .distinctUntilChanged()
             .bind { permission in
@@ -37,7 +42,6 @@ final class ArroundShopMapViewController: UIViewController, View {
             .bind { [weak self] userLocation in
                 guard let self = self else { return }
                 guard let userLocation = userLocation else { return }
-                print("vc setCamera")
                 self.setCameraWithUser(to: userLocation)
             }.disposed(by: disposeBag)
         
@@ -51,6 +55,18 @@ final class ArroundShopMapViewController: UIViewController, View {
                 for marker in markers {
                     self.addMarker(to: self.mapView, from: marker)
                 }
+            }.disposed(by: disposeBag)
+        
+        reactor.state.map { $0.selectedCarShop }
+            .compactMap { $0 }
+            .distinctUntilChanged()
+            .observe(on: MainScheduler.instance)
+            .bind { [weak self] selectedCarShop in
+                guard let self = self else { return }
+                let detailCarShopViewController = DetailCarShopViewController()
+                detailCarShopViewController.modalPresentationStyle = .fullScreen
+                detailCarShopViewController.reactor = DetailCarShopReactor(carShopDTO: selectedCarShop)
+                self.present(detailCarShopViewController, animated: true)
             }.disposed(by: disposeBag)
     }
     
@@ -87,15 +103,6 @@ final class ArroundShopMapViewController: UIViewController, View {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewAttribute()
-        permisssionManager.updateLocation = { lat, lng in
-            print("update lat \(lat), lng \(lng)")
-        }
-        
-        permisssionManager.whenPermissionDeniend = {
-            print("permission denined")
-        }
-        
-        permisssionManager.requestUseLocationPermission()
     }
 }
 private extension ArroundShopMapViewController {

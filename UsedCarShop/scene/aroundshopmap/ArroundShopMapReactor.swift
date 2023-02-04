@@ -15,11 +15,13 @@ final class ArroundShopMapReactor: Reactor {
     enum Action {
         case viewDidLoad
         case tapUserLocation
+        case carshopMarkerTapped(Location)
     }
     
     enum Mutation {
         case updateCameraPoint(Location?, LocationPermission)
         case updateCarShopPoints([CarShopDTO]?)
+        case updateSelectedCarShop(CarShopDTO?)
         case none
     }
     
@@ -27,17 +29,18 @@ final class ArroundShopMapReactor: Reactor {
         var userPoint: Location? = Location(lat: 0.0, lng: 0.0)
         var locationPermission: LocationPermission = .available
         var carshops: [CarShopDTO] = []
+        var selectedCarShop: CarShopDTO?
     }
     
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
         case .viewDidLoad:
-            return Observable.merge(
-                                      requestUserLocation().map { Mutation.updateCameraPoint($0, $1)},
-                                      requestCarShopPoints().map { Mutation.updateCarShopPoints($0)}
-                                     )
+            return Observable.merge(requestUserLocation().map { Mutation.updateCameraPoint($0, $1)},
+                                      requestCarShopPoints().map { Mutation.updateCarShopPoints($0)})
         case .tapUserLocation:
             return .just(.updateCameraPoint(currentState.userPoint, currentState.locationPermission))
+        case .carshopMarkerTapped(let location):
+            return .just(.updateSelectedCarShop(findCarShop(by: location)))
         }
     }
     
@@ -45,14 +48,14 @@ final class ArroundShopMapReactor: Reactor {
         var newState = state
         switch mutation {
         case .updateCameraPoint(let location, let permission):
-            print("updateCameraPoint")
             newState.locationPermission = permission
             newState.userPoint = location
         case .updateCarShopPoints(let carshops):
-            print("updated carshop!!")
             newState.carshops = carshops ?? []
         case .none:
             print("")
+        case .updateSelectedCarShop(let selectedCarShop):
+            newState.selectedCarShop = selectedCarShop
         }
         return newState
     }
@@ -62,6 +65,7 @@ private extension ArroundShopMapReactor {
         return Observable<(Location?, LocationPermission)>.create { [weak self] observer in
             guard let self = self else { return Disposables.create() }
             let task = Task {
+                print("in task task")
                 observer.onNext(await self.usecase.requestUserLocation())
             }
             return Disposables.create { task.cancel() }
@@ -76,5 +80,14 @@ private extension ArroundShopMapReactor {
             }
             return Disposables.create { task.cancel() }
         }
+    }
+    
+    func findCarShop(by location: Location) -> CarShopDTO? {
+        for carshop in self.currentState.carshops {
+            if carshop.location == location {
+                return carshop
+            }
+        }
+        return nil
     }
 }
