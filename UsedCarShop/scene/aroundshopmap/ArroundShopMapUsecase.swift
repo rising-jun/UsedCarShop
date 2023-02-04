@@ -12,22 +12,22 @@ final class ArroundShopMapUsecase {
     private let repository = CarShopRespository()
     
     func requestUserLocation() async -> (Location?, LocationPermission) {
-        return await withCheckedContinuation { continuation in
+        return await withCheckedContinuation { [weak self] continuation in
+            guard let self = self else { return }
             permissionManager.updateLocation = { lat, lng in
-                print("arround usecase closure \(lat) \(lng)")
                 continuation.resume(returning: (Location(lat: lat, lng: lng), .available))
+                self.permissionManager.updateLocation = nil
             }
             
             permissionManager.whenPermissionDeniend = {
                 continuation.resume(returning: (Location(lat: 0.0, lng: 0.0), .unavailable))
+                self.permissionManager.whenPermissionDeniend = nil
             }
-            
             permissionManager.requestUseLocationPermission()
         }
     }
     
     func requestCarShopModel() async -> [CarShopDTO]? {
-        print("request carshop")
         return await repository.requestMockCarShop()
     }
 }

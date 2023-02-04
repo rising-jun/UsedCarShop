@@ -11,7 +11,7 @@ target 'UsedCarShop' do
   pod 'ReactorKit'
   pod 'RxAppState'
   pod 'RxSwift'
-  pod 'RxCocoa'  
+  pod 'RxCocoa'
   pod 'NMapsMap'
   pod 'RxAppState'
   target 'UsedCarShopTests' do

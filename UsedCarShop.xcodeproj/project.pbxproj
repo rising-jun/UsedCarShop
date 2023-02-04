@@ -15,6 +15,9 @@
 		722CAAA329864AE4005F6F49 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722CAAA229864AE4005F6F49 /* ErrorHandler.swift */; };
 		722CAAA729865459005F6F49 /* ArroundShopMapReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722CAAA629865459005F6F49 /* ArroundShopMapReactor.swift */; };
 		722CAAA929865D25005F6F49 /* ArroundShopMapUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722CAAA829865D25005F6F49 /* ArroundShopMapUsecase.swift */; };
+		7251E8B1298AA89600F21ABE /* DetailCarShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7251E8B0298AA89600F21ABE /* DetailCarShopViewController.swift */; };
+		7251E8B4298AB02100F21ABE /* DetailCarTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7251E8B3298AB02100F21ABE /* DetailCarTableViewDataSource.swift */; };
+		7251E8B6298AB13F00F21ABE /* DetailCarShopReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7251E8B5298AB13F00F21ABE /* DetailCarShopReactor.swift */; };
 		72B4FE432984D912000902AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B4FE422984D912000902AF /* AppDelegate.swift */; };
 		72B4FE452984D912000902AF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B4FE442984D912000902AF /* SceneDelegate.swift */; };
 		72B4FE472984D912000902AF /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B4FE462984D912000902AF /* SplashViewController.swift */; };
@@ -23,6 +26,7 @@
 		72B4FE5A2984D915000902AF /* UsedCarShopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B4FE592984D915000902AF /* UsedCarShopTests.swift */; };
 		72B4FE642984D915000902AF /* UsedCarShopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B4FE632984D915000902AF /* UsedCarShopUITests.swift */; };
 		72B4FE662984D915000902AF /* UsedCarShopUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B4FE652984D915000902AF /* UsedCarShopUITestsLaunchTests.swift */; };
+		72BB243B298E205600028DBB /* CarShopDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BB243A298E205600028DBB /* CarShopDetailCell.swift */; };
 		72E7303B2984F96A00B70639 /* ArroundShopMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E7303A2984F96A00B70639 /* ArroundShopMapViewController.swift */; };
 		72E7303F2985045E00B70639 /* PermissionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E7303E2985045E00B70639 /* PermissionManager.swift */; };
 		72E73041298515EC00B70639 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E73040298515EC00B70639 /* Service.swift */; };
@@ -61,6 +65,9 @@
 		722CAAA229864AE4005F6F49 /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
 		722CAAA629865459005F6F49 /* ArroundShopMapReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArroundShopMapReactor.swift; sourceTree = "<group>"; };
 		722CAAA829865D25005F6F49 /* ArroundShopMapUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArroundShopMapUsecase.swift; sourceTree = "<group>"; };
+		7251E8B0298AA89600F21ABE /* DetailCarShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCarShopViewController.swift; sourceTree = "<group>"; };
+		7251E8B3298AB02100F21ABE /* DetailCarTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCarTableViewDataSource.swift; sourceTree = "<group>"; };
+		7251E8B5298AB13F00F21ABE /* DetailCarShopReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCarShopReactor.swift; sourceTree = "<group>"; };
 		72B4FE3F2984D912000902AF /* UsedCarShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UsedCarShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72B4FE422984D912000902AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		72B4FE442984D912000902AF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +80,7 @@
 		72B4FE5F2984D915000902AF /* UsedCarShopUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UsedCarShopUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		72B4FE632984D915000902AF /* UsedCarShopUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsedCarShopUITests.swift; sourceTree = "<group>"; };
 		72B4FE652984D915000902AF /* UsedCarShopUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsedCarShopUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		72BB243A298E205600028DBB /* CarShopDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarShopDetailCell.swift; sourceTree = "<group>"; };
 		72E7303A2984F96A00B70639 /* ArroundShopMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArroundShopMapViewController.swift; sourceTree = "<group>"; };
 		72E7303E2985045E00B70639 /* PermissionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionManager.swift; sourceTree = "<group>"; };
 		72E73040298515EC00B70639 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
@@ -155,14 +163,33 @@
 			path = splash;
 			sourceTree = "<group>";
 		};
-		722CAAA529865442005F6F49 /* arrroundshopmap */ = {
+		722CAAA529865442005F6F49 /* aroundshopmap */ = {
 			isa = PBXGroup;
 			children = (
 				72E7303A2984F96A00B70639 /* ArroundShopMapViewController.swift */,
 				722CAAA629865459005F6F49 /* ArroundShopMapReactor.swift */,
 				722CAAA829865D25005F6F49 /* ArroundShopMapUsecase.swift */,
 			);
-			path = arrroundshopmap;
+			path = aroundshopmap;
+			sourceTree = "<group>";
+		};
+		7251E8AF298AA88600F21ABE /* detailcarshop */ = {
+			isa = PBXGroup;
+			children = (
+				7251E8B2298AADEA00F21ABE /* collectionfactor */,
+				7251E8B0298AA89600F21ABE /* DetailCarShopViewController.swift */,
+				7251E8B5298AB13F00F21ABE /* DetailCarShopReactor.swift */,
+			);
+			path = detailcarshop;
+			sourceTree = "<group>";
+		};
+		7251E8B2298AADEA00F21ABE /* collectionfactor */ = {
+			isa = PBXGroup;
+			children = (
+				7251E8B3298AB02100F21ABE /* DetailCarTableViewDataSource.swift */,
+				72BB243A298E205600028DBB /* CarShopDetailCell.swift */,
+			);
+			path = collectionfactor;
 			sourceTree = "<group>";
 		};
 		72B4FE362984D912000902AF = {
@@ -226,7 +253,8 @@
 		72E7303C298502EE00B70639 /* scene */ = {
 			isa = PBXGroup;
 			children = (
-				722CAAA529865442005F6F49 /* arrroundshopmap */,
+				7251E8AF298AA88600F21ABE /* detailcarshop */,
+				722CAAA529865442005F6F49 /* aroundshopmap */,
 				722CAAA42986543C005F6F49 /* splash */,
 			);
 			path = scene;
@@ -495,6 +523,7 @@
 			files = (
 				72B4FE472984D912000902AF /* SplashViewController.swift in Sources */,
 				72E7303F2985045E00B70639 /* PermissionManager.swift in Sources */,
+				7251E8B1298AA89600F21ABE /* DetailCarShopViewController.swift in Sources */,
 				72E73041298515EC00B70639 /* Service.swift in Sources */,
 				722CAA9E29863E64005F6F49 /* CarShopAPI.swift in Sources */,
 				72B4FE432984D912000902AF /* AppDelegate.swift in Sources */,
@@ -504,6 +533,9 @@
 				722CAAA729865459005F6F49 /* ArroundShopMapReactor.swift in Sources */,
 				722CAA9B2986391E005F6F49 /* CarShopModel.swift in Sources */,
 				722CAAA929865D25005F6F49 /* ArroundShopMapUsecase.swift in Sources */,
+				72BB243B298E205600028DBB /* CarShopDetailCell.swift in Sources */,
+				7251E8B6298AB13F00F21ABE /* DetailCarShopReactor.swift in Sources */,
+				7251E8B4298AB02100F21ABE /* DetailCarTableViewDataSource.swift in Sources */,
 				72E7303B2984F96A00B70639 /* ArroundShopMapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

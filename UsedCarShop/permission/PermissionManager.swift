@@ -12,6 +12,7 @@ final class PermissionManager: NSObject {
     var whenPermissionDeniend: (() -> ())?
     var updateLocation: ((Double, Double) -> ())?
     private let locationManager = CLLocationManager()
+    private var updateLocationDispatchItem: DispatchWorkItem?
     
     override init() {
         super.init()
@@ -49,9 +50,8 @@ extension PermissionManager: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else { return }
-        updateLocation?(location.coordinate.latitude, location.coordinate.longitude)
+        self.updateLocation?(location.coordinate.latitude, location.coordinate.longitude)
     }
-    
 }
 
 @frozen enum LocationPermission: Equatable {
