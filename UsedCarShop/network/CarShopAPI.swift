@@ -9,7 +9,7 @@ import Foundation
 
 enum CarShopAPI {
     case carShop
-    case carInfo(id: Int)
+    case carInfo(id: String)
 }
 extension CarShopAPI: TargetAPI {
     var baseURL: String {
@@ -21,7 +21,7 @@ extension CarShopAPI: TargetAPI {
         case .carShop:
             return "/carshop"
         case .carInfo(_):
-            return "/carInfo"
+            return "/carinfo"
         }
     }
     

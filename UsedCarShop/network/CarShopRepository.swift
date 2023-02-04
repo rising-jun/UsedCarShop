@@ -11,14 +11,25 @@ final class CarShopRespository {
     let service = Service()
     
     func requestMockCarShop() async -> [CarShopDTO]? {
-        let result = await service.fetchMockCarShopJson(by: CarShopAPI.carShop)
+        let result = await service.fetchMockJson(by: CarShopAPI.carShop)
+        return await verifyResult(with: result, decodeType: [CarShopDTO].self)
+    }
+    
+    func requestMockDetailCars(by carshopId: String) async -> [CarDTO]? {
+        let result = await service.fetchMockJson(by: CarShopAPI.carInfo(id: carshopId))
+        return await verifyResult(with: result, decodeType: [CarDTO].self)
+    }
+}
+private extension CarShopRespository {
+    func verifyResult<T: Decodable>(with result: Result<Data, NetworkError>, decodeType: T.Type) async -> T? {
         switch result {
         case .success(let data):
-            guard let carShops = jsonDecode(decodeType: [CarShopDTO].self, data: data) else {
+            guard let cars = jsonDecode(decodeType: decodeType, data: data) else {
                 //TODO go to error jsonparsing
                 print("json error")
-                return nil }
-            return carShops
+                return nil
+            }
+            return cars
         case .failure(let error):
             print("error \(error)")
             //TODO go to error
@@ -26,7 +37,7 @@ final class CarShopRespository {
         return nil
     }
     
-    private func jsonDecode<T: Decodable>(decodeType: T.Type, data: Data) -> T? {
+    func jsonDecode<T: Decodable>(decodeType: T.Type, data: Data) -> T? {
         return try? JSONDecoder().decode(decodeType, from: data)
     }
 }

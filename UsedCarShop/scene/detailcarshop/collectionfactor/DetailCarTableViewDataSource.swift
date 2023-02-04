@@ -8,11 +8,14 @@
 import UIKit
 
 final class DetailCarTableViewDataSource: NSObject {
-    
+    private var cars = [CarDTO]()
+    func update(cars: [CarDTO]) {
+        self.cars = cars
+    }
 }
 extension DetailCarTableViewDataSource: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return cars.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

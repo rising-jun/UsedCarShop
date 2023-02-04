@@ -13,7 +13,19 @@ final class DetailCarShopViewController: UIViewController, View {
     var disposeBag = DisposeBag()
     
     func bind(reactor: DetailCarShopReactor) {
+        rx.viewDidLoad
+            .map { Reactor.Action.viewDidLoad }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
         
+        reactor.state.map { $0.cars }
+            .filter { $0.count > 0 }
+            .take(1)
+            .observe(on: MainScheduler.instance)
+            .bind { [weak self] cars in
+                guard let self = self else { return }
+                
+            }.disposed(by: disposeBag)
     }
     
     private lazy var tableView: UITableView = {
