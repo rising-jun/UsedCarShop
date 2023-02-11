@@ -6,6 +6,7 @@
 //
 
 import SnapKit
+import Nuke
 
 final class CarShopDetailCell: UITableViewCell {
     
@@ -85,5 +86,10 @@ extension CarShopDetailCell {
         
     }
     
-    //func configuration(with: ) { }
+    func configuration(with car: CarDTO) {
+        titleLabel.text = car.name
+        subTitleLabel.text = car.doodleDTODescription
+        Nuke.loadImage(with: ImageRequest(url: URL(string: car.imageURL)!, priority: .high),
+                       into: carView)
+    }
 }

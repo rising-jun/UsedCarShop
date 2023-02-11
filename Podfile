@@ -14,6 +14,7 @@ target 'UsedCarShop' do
   pod 'RxCocoa'
   pod 'NMapsMap'
   pod 'RxAppState'
+  pod 'Nuke'
   target 'UsedCarShopTests' do
     inherit! :search_paths
     # Pods for testing

@@ -23,7 +23,6 @@ final class Service {
                     return continuation.resume(returning: .success(data))
                 }
                 if api.path == "/carinfo" {
-                    print("hello?")
                     guard let parameter = api.parameters,
                           let id = parameter["id"] as? String else {
                         return continuation.resume(returning: .failure(.notFound))

@@ -1,5 +1,6 @@
 PODS:
   - NMapsMap (3.16.0)
+  - Nuke (10.7.1)
   - ReactorKit (3.2.0):
     - RxSwift (~> 6.0)
     - WeakMapTable (~> 1.1)
@@ -17,6 +18,7 @@ PODS:
 
 DEPENDENCIES:
   - NMapsMap
+  - Nuke
   - ReactorKit
   - RxAppState
   - RxCocoa
@@ -26,6 +28,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - NMapsMap
+    - Nuke
     - ReactorKit
     - RxAppState
     - RxCocoa
@@ -36,6 +39,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   NMapsMap: a2593320fca2bb09e521c05b4dffee4da42e96ed
+  Nuke: 279f17a599fd1c83cf51de5e0e1f2db143a287b0
   ReactorKit: e8b11d6b9c415405f381669b095c154a05b59eca
   RxAppState: 9c34f951d4ff8b9034f84016fe766202365bceb2
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
@@ -44,6 +48,6 @@ SPEC CHECKSUMS:
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   WeakMapTable: 05c694ce8439a7a9ebabb56187287a63c57673d6
 
-PODFILE CHECKSUM: a102f5faee5a11ac4e94fc4ca75946bd0d41d512
+PODFILE CHECKSUM: 641381b68d8747de375a3994c17dd6c1435e8317
 
 COCOAPODS: 1.11.3

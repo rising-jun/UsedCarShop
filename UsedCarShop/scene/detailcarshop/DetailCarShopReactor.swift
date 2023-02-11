@@ -22,16 +22,19 @@ final class DetailCarShopReactor: Reactor {
     
     enum Mutation {
         case updateCars([CarDTO])
+        case updateCarShop(CarShopDTO)
     }
     
     struct State {
         var cars = [CarDTO]()
+        var carShop: CarShopDTO?
     }
     
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
         case .viewDidLoad:
-            return requestDetailCars().map { .updateCars($0) }
+            return Observable.merge(requestDetailCars().map { .updateCars($0) },
+                                     .just(Mutation.updateCarShop(carShopDTO)))
         }
     }
     
@@ -40,6 +43,8 @@ final class DetailCarShopReactor: Reactor {
         switch mutation {
         case .updateCars(let cars):
             newState.cars = cars
+        case .updateCarShop(let carShop):
+            newState.carShop = carShop
         }
         return newState
     }

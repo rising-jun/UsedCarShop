@@ -8,8 +8,14 @@
 import Foundation
 
 struct CarShopDTO: Codable, Equatable, Any {
-    let id, name, alias: String
+    let id, name, alias, phoneNumber: String
     let location: Location
+    
+    enum CodingKeys: String, CodingKey {
+        case id, name, alias
+        case phoneNumber = "phone_number"
+        case location
+    }
 }
 
 struct Location: Codable {

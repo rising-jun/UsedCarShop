@@ -18,6 +18,7 @@
 		7251E8B1298AA89600F21ABE /* DetailCarShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7251E8B0298AA89600F21ABE /* DetailCarShopViewController.swift */; };
 		7251E8B4298AB02100F21ABE /* DetailCarTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7251E8B3298AB02100F21ABE /* DetailCarTableViewDataSource.swift */; };
 		7251E8B6298AB13F00F21ABE /* DetailCarShopReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7251E8B5298AB13F00F21ABE /* DetailCarShopReactor.swift */; };
+		72958CF12993F33700F3C1A0 /* DetailCarShopHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72958CF02993F33700F3C1A0 /* DetailCarShopHeaderView.swift */; };
 		72B4FE432984D912000902AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B4FE422984D912000902AF /* AppDelegate.swift */; };
 		72B4FE452984D912000902AF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B4FE442984D912000902AF /* SceneDelegate.swift */; };
 		72B4FE472984D912000902AF /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B4FE462984D912000902AF /* SplashViewController.swift */; };
@@ -69,6 +70,7 @@
 		7251E8B0298AA89600F21ABE /* DetailCarShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCarShopViewController.swift; sourceTree = "<group>"; };
 		7251E8B3298AB02100F21ABE /* DetailCarTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCarTableViewDataSource.swift; sourceTree = "<group>"; };
 		7251E8B5298AB13F00F21ABE /* DetailCarShopReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCarShopReactor.swift; sourceTree = "<group>"; };
+		72958CF02993F33700F3C1A0 /* DetailCarShopHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCarShopHeaderView.swift; sourceTree = "<group>"; };
 		72B4FE3F2984D912000902AF /* UsedCarShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UsedCarShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72B4FE422984D912000902AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		72B4FE442984D912000902AF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 			children = (
 				7251E8B3298AB02100F21ABE /* DetailCarTableViewDataSource.swift */,
 				72BB243A298E205600028DBB /* CarShopDetailCell.swift */,
+				72958CF02993F33700F3C1A0 /* DetailCarShopHeaderView.swift */,
 			);
 			path = collectionfactor;
 			sourceTree = "<group>";
@@ -525,6 +528,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				72B4FE472984D912000902AF /* SplashViewController.swift in Sources */,
+				72958CF12993F33700F3C1A0 /* DetailCarShopHeaderView.swift in Sources */,
 				72E7303F2985045E00B70639 /* PermissionManager.swift in Sources */,
 				7251E8B1298AA89600F21ABE /* DetailCarShopViewController.swift in Sources */,
 				72E73041298515EC00B70639 /* Service.swift in Sources */,
